@@ -1,0 +1,44 @@
+|  Test Print Square  |
+=======================
+
+``print_square()`` Prints a square of '#' characters
+---------------------------------------------------------------
+
+Importing the function from the module:
+    >>> print_square = __import__("4-print_square").print_square
+
+Testing regular case:
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+Testing case with size 0:
+    >>> print_square(0)
+
+Testing negative size:
+    >>> print_square(-3)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Testing non-integer size:
+    >>> print_square(2.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Testing large size:
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########

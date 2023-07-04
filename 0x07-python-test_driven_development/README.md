@@ -12,6 +12,7 @@ This repository provides examples of Python functions with corresponding test ca
 - [Divide Matrix (Improved)](./2-matrix_divided.py): An improved version of the matrix division function with additional validation and error handling.
 - [Say My Name](./3-say_my_name.py): A function that prints a person's name.
 - [Print Square](./4-print_square.py): A function that prints a square of '#' characters.
+- [text indentation](./5-text_indentation.py): A function that prints a text with 2 new lines after each of these characters '.',' ?',and ':'.".
 
 ## Test Cases
 

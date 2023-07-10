@@ -1,5 +1,52 @@
 #!/usr/bin/python3
+"""
+Matrix Multiplication
+
+This module provides a function for multiplying two matrices.
+
+"""
+
+
 def matrix_mul(m_a, m_b):
+    """
+    Multiply two matrices.
+
+    Args:
+        m_a (list): The first matrix represented as,
+                    a list of lists of integers or floats.
+        m_b (list): The second matrix represented as,
+                    a list of lists of integers or floats.
+
+    Returns:
+        list: The resulting matrix after multiplying m_a and m_b.
+
+    Raises:
+        TypeError: If m_a or m_b is not a list,
+                or if m_a or m_b is not a list of lists,
+                or if any element in m_a
+                or m_b is not an integer or float.
+        ValueError: If m_a or m_b is empty ([] or [[]]),
+                or if m_a and m_b cannot be multiplied,
+                        due to incompatible dimensions.
+
+    Examples:
+        >>> matrix_mul([[2, 5], [3, 1]], [[4, 2], [6, 3]])
+        [[32, 16], [18, 9]]
+        # Multiply two matrices: [[2, 5], [3, 1]] and [[4, 2], [6, 3]]
+        # The expected result is [[32, 16], [18, 9]]
+
+        >>> matrix_mul([[5, 8]], [[2.0, 1], [3, 7.0]])
+        [[16.0, 39.0]]
+        # Multiply two matrices: [[5, 8]] and [[2.0, 1], [3, 7.0]]
+        # The expected result is [[16.0, 39.0]]
+
+        >>> matrix_mul([[-1, 3], [2, -4]], [[5, -2], [7, 1]])
+        [[19, -5], [-6, -10]]
+        # Multiply two matrices: [[-1, 3], [2, -4]] and [[5, -2], [7, 1]]
+        # The expected result is [[19, -5], [-6, -10]]
+
+    """
+
     # Validate m_a and m_b
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")

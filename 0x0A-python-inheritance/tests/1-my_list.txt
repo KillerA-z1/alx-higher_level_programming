@@ -1,0 +1,23 @@
+|  Testing MyList class |
+=======================
+
+``1-my_list()`` Return a list
+
+Import module:
+	>>> MyList = __import__('1-my_list').MyList
+
+# Create an instance of MyList
+>>> my_list = MyList()
+
+# Test initialization
+>>> len(my_list)
+0
+
+# Test append method
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+
+# Test print_sorted method
+>>> my_list.print_sorted()
+[1, 2, 3]

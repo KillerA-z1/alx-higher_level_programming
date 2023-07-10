@@ -1,0 +1,77 @@
+The ``7-base_geometry`` module
+==============================
+
+Using ``BaseGeometry``
+----------------------
+
+Importing the function from the module:
+    >>> BG = __import__("7-base_geometry").BaseGeometry
+
+Testing the `area()` method:
+
+>>> b = BG()
+>>> b.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+Testing the `area()` method with an incorrect number of arguments:
+
+>>> b.area(1)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 2 were given
+
+Testing the `integer_validator()` method with a valid integer:
+
+>>> b.integer_validator("integer", 1)
+
+Testing the `integer_validator()` method with an integer value of 0:
+
+>>> b.integer_validator("integer", 0)
+Traceback (most recent call last):
+...
+ValueError: integer must be greater than 0
+
+Testing the `integer_validator()` method with a negative integer value:
+
+>>> b.integer_validator("integer", -5)
+Traceback (most recent call last):
+...
+ValueError: integer must be greater than 0
+
+Testing the `integer_validator()` method with a float value:
+
+>>> b.integer_validator("float", 1.5)
+Traceback (most recent call last):
+...
+TypeError: float must be an integer
+
+Testing the `integer_validator()` method with a complex number:
+
+>>> b.integer_validator("complex", complex(1, 1))
+Traceback (most recent call last):
+...
+TypeError: complex must be an integer
+
+Testing the `integer_validator()` method with a string value:
+
+>>> b.integer_validator("string", "hello")
+Traceback (most recent call last):
+...
+TypeError: string must be an integer
+
+Testing the `integer_validator()` method with a tuple value:
+
+>>> b.integer_validator("tuple", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: tuple must be an integer
+
+Testing the `integer_validator()` method with a boolean value:
+
+try:
+...     b.integer_validator("bool", True)
+... except TypeError as e:
+...     print(str(e))
+TypeError: bool must be an integer

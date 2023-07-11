@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+    This Module reads a file
+"""
+
+
 def read_file(filename=""):
     """
     Read the contents of a text file (UTF8) and print it to stdout.
@@ -8,6 +13,7 @@ def read_file(filename=""):
                         an empty string is used.
 
     """
-    with open(filename, "r", encoding="utf-8") as file:
-        for line in file:
-            print(line, end="")
+    with open(filename, encoding="utf-8") as file:
+        contents = file.read()
+        print(contents, end="")
+        file.closed

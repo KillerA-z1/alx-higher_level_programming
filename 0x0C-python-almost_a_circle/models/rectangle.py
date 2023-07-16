@@ -29,3 +29,81 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+
+    @property
+    def width(self):
+        """Width property"""
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        """Width Setter"""
+        self.validate_positive_integer("width", width)
+        self.__width = width
+
+    @property
+    def height(self):
+        """Height property"""
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        """Height Setter"""
+        self.validate_positive_integer("height", height)
+        self.__height = height
+
+    @property
+    def x(self):
+        """x property"""
+        return self.__x
+
+    @x.setter
+    def x(self, x):
+        """x Setter"""
+        self.validate_non_negative_integer("x", x)
+        self.__x = x
+
+    @property
+    def y(self):
+        """y property"""
+        return self.__y
+
+    @y.setter
+    def y(self, y):
+        """y Setter"""
+        self.validate_non_negative_integer("y", y)
+        self.__y = y
+
+    def validate_positive_integer(self, name, value):
+        """
+        Validate that the given value is a positive integer.
+
+        Args:
+            name (str): The name of the value being validated.
+            value (int): The value to be validated.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is not positive.
+        """
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be > 0")
+
+    def validate_non_negative_integer(self, name, value):
+        """
+        Validate that the given value is a non-negative integer.
+
+        Args:
+            name (str): The name of the value being validated.
+            value (int): The value to be validated.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is negative.
+        """
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value < 0:
+            raise ValueError(f"{name} must be >= 0")

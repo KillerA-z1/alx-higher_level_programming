@@ -111,3 +111,31 @@ class Rectangle(Base):
     def area(self):
         """Calculates and returns the area of the rectangle."""
         return self.width * self.height
+    
+    def display(self):
+        """
+        Display the rectangle with '#' representing the shape.
+
+        The rectangle is displayed with the specified 'x' and 'y' offsets.
+        The 'x' offset represents the number of spaces before the shape starts horizontally.
+        The 'y' offset represents the number of newlines before the shape starts vertically.
+        """
+        newline_count = self.__y
+        while newline_count > 0:
+            print("")
+            newline_count -= 1
+
+        height_count = self.__height
+        while height_count > 0:
+            x_offset = self.__x
+            while x_offset > 0:
+                print(" ", end="")
+                x_offset -= 1
+
+            width_count = self.__width - 1
+            while width_count > 0:
+                print("#", end="")
+                width_count -= 1
+
+            print("#")
+            height_count -= 1

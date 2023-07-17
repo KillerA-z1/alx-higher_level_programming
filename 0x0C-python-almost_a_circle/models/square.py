@@ -41,3 +41,13 @@ class Square(Rectangle):
         String representation of the square.
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def update(self, *args, **kwargs):
+        """Updating data"""
+        if args:
+            attributes = ['id', 'width', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:
+            for key in ['id', 'size', 'x', 'y']:
+                setattr(self, key, kwargs.get(key, getattr(self, key)))

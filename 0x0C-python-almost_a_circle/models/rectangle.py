@@ -151,7 +151,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Updating data"""
         attributes = ['id', 'width', 'height', 'x', 'y']
-    
+
         if args:
             for i, arg in enumerate(args):
                 setattr(self, attributes[i], arg)

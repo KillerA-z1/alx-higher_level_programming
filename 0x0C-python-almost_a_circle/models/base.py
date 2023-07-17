@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Base class
+"""
+
+
 class Base:
     """Base class for managing id attribute"""
 
@@ -16,4 +21,4 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            self.id = self.__nb_objects

@@ -101,7 +101,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """Serializes a list in CSV"""
         filename = cls.__name__ + ".csv"
-        
+
         with open(filename, 'w', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)
 
@@ -122,14 +122,14 @@ class Base:
         """Deserialize a list in csv"""
         filename = cls.__name__ + ".csv"
         instance_list = []
-        
+
         try:
             with open(filename, 'r') as csvfile:
                 csv_reader = csv.reader(csvfile)
-                
+
                 for row in csv_reader:
                     dictionary = {}
-                    
+
                     if cls.__name__ == "Rectangle":
                         dictionary = {
                             "id": int(row[0]),
@@ -145,10 +145,10 @@ class Base:
                             "x": int(row[2]),
                             "y": int(row[3])
                         }
-                    
+
                     obj = cls.create(**dictionary)
                     instance_list.append(obj)
         except FileNotFoundError:
             pass
-        
+
         return instance_list

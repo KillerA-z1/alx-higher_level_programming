@@ -4,6 +4,7 @@ Base class
 """
 
 import json
+import os
 
 
 class Base:
@@ -75,3 +76,22 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Load a list of instances from a JSON file.
+
+        Returns:
+            list: List of instances loaded from the file.
+        """
+        filename = cls.__name__ + ".json"
+
+        if not os.path.exists(filename):
+            return []
+        else:
+            with open(filename, 'r', encoding='utf-8') as file:
+                json_data = file.read()
+                object_list = cls.from_json_string(json_data)
+                instance_list = [cls.create(**obj) for obj in object_list]
+            return instance_list

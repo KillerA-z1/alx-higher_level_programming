@@ -3,6 +3,8 @@
 Base class
 """
 
+import json
+
 
 class Base:
     """Base class for managing id attribute"""
@@ -22,3 +24,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Create a new JSON representation"""
+        if not list_dictionaries:
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)

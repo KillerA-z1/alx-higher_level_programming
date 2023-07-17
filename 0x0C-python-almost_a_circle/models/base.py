@@ -43,3 +43,18 @@ class Base:
 
         with open(filename, 'w') as file:
             file.write(cls.to_json_string(obj_list))
+
+    def from_json_string(json_string):
+        """
+        Load a list of objects from a JSON string.
+
+        Args:
+            json_string (str): JSON string representing a list of objects.
+
+        Returns:
+            list: List of objects loaded from the JSON string.
+        """
+        if json_string is None or json_string == "[]":
+            return []
+        else:
+            return json.loads(json_string)

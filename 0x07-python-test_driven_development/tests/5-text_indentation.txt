@@ -1,0 +1,50 @@
+| Test Text Indentation |
+========================
+
+Importing the function from the module:
+    >>> text_indentation = __import__("4-text_indentation").text_indentation
+
+Testing with a simple text:
+    >>> text_indentation("Hello. How are you? I'm fine: Thank you!")
+    Hello.
+    
+    How are you?
+    
+    I'm fine:
+    
+    Thank you!
+
+Testing with multiple spaces between sentences:
+    >>> text_indentation("Hello.    How are you?    I'm fine:    Thank you!")
+    Hello.
+    
+    How are you?
+    
+    I'm fine:
+    
+    Thank you!
+
+Testing with a text starting with spaces:
+    >>> text_indentation("    Hello. How are you? I'm fine: Thank you!")
+    Hello.
+    
+    How are you?
+    
+    I'm fine:
+    
+    Thank you!
+
+Testing with an empty string:
+    >>> text_indentation("")
+    
+
+Testing with a string containing only spaces:
+    >>> text_indentation("       ")
+    
+
+Testing with a string containing no punctuation:
+    >>> text_indentation("This is a test without punctuation")
+    This is a test without punctuation
+
+Testing with a string containing only punctuation:
+    >>> text_indentation("...???:...")

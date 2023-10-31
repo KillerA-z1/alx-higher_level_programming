@@ -1,0 +1,41 @@
+|  Test AddS 2 Integers  |
+=======================
+
+``0-add_integer()`` Returns an integer: the addition of a and b
+---------------------------------------------------------------
+
+Importing the function:
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Testing regular addition:
+    >>> add_integer(3, 4)
+    7
+
+Testing positive with negative:
+    >>> add_integer(5, -6)
+    -1
+
+Testing negative with positive:
+    >>> add_integer(-10, 15)
+    5
+
+Testing float with int:
+    >>> add_integer(5.5, 4)
+    9
+
+Testing int with float:
+    >>> add_integer(5, 7.8)
+    12
+
+Testing both float:
+    >>> add_integer(2.45, 3.1)
+    5
+
+Testing for passed NaN:
+    >>> add_integer(float('NaN'), 0)
+    89
+
+Testing for passed inf:
+    >>> add_integer(1, float('inf'))
+    89
+

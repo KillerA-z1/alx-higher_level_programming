@@ -1,0 +1,31 @@
+|  Test Say My Name  |
+=======================
+
+``say_my_name()`` Print the name
+
+Importing the function from the module:
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Testing regular case:
+    >>> say_my_name("Hello", "Ahmed")
+    My name is Hello Ahmed
+
+Testing with one arg:
+    >>> say_my_name("Ahmed")
+    My name is Ahmed
+
+Testing with an empty string as the last name:
+    >>> say_my_name("Ahmed", "")
+    My name is Ahmed
+
+Testing exception when last name is not a string:
+    >>> say_my_name("Ahmed", 123)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Testing exception when first name is not a string:
+    >>> say_my_name(123)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string

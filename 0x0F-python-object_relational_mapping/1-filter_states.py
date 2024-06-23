@@ -20,7 +20,9 @@ if __name__ == "__main__":
     rows = cur.fetchall()
 
     # Print the results
-    [print(rows) for row in rows if row[1][0] == "N"]
+    for row in rows:
+        if row[1].startswith("N"):
+            print(row)
     # Close the cursor and the database connection
     cur.close()
     db.close()

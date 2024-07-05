@@ -12,7 +12,4 @@ if __name__ == "__main__":
     token = sys.argv[2]
     response = requests.get('https://api.github.com/user',
                             auth=(username, token))
-    if response.status_code == 200:
-        print(response.json()['id'])
-    else:
-        print("Failed to retrieve user information")
+    print(response.json()['id'])

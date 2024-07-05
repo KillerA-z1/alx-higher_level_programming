@@ -12,4 +12,4 @@ if __name__ == "__main__":
     token = sys.argv[2]
     response = requests.get('https://api.github.com/user',
                             auth=(username, token))
-    print(response.json()['id'])
+    print(response.json().get("id"))
